@@ -2,14 +2,15 @@
 #include <fstream>
 #include <string>
 using namespace std;
-int l;
+
 int main()
 {
-    ifstream fin("file.txt");
-    ofstream fout("file.txt");
+    ifstream fin("text.txt");  // вывод данных из файл
+    ofstream fout("text.txt"); // ввод данных в файла
+    string a;
     string b;
     float x, y;
-    l = 0;
+
     for (int x = -4; x < 5; x++)
     {
 
@@ -29,14 +30,21 @@ int main()
     }
 
     fout.close();
-    float *data = new float[l];
-    l = 0;
+
+    cout << "sled" << endl;
+
     while (getline(fin, b))
     {
-        data[l] = stof(b);
-        l++;
+
+        float c = stof(b);
+        for (int i = 0; i < 5; i++)
+        {
+
+            c = c;
+        }
+
+        cout << c << endl;
     }
-    for (int i = 0; i < l; i++)
-        cout << data[i] << "\n";
-    fin.close();
+
+    fin.close(); // закрываем файл
 }
